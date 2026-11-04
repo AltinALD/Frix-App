@@ -24,7 +24,8 @@
   --shadow: 0 4px 24px rgba(255, 90, 0, 0.08);
   --shadow-lg: 0 8px 40px rgba(255, 90, 0, 0.14);
   --nav-height: 72px;
-  --header-height: 60px;
+  --header-height: 68px;
+  --cream: #F4EFE4;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
@@ -73,15 +74,14 @@ body {
   top: 0;
   z-index: 100;
   height: var(--header-height);
-  background: var(--white);
-  color: var(--brand);
+  background: var(--cream);
+  color: var(--accent);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 14px;
   flex-shrink: 0;
-  border-bottom: 3px solid var(--accent);
-  box-shadow: 0 2px 12px rgba(255, 90, 0, 0.1);
+  border-bottom: none;
 }
 
 .header-brand {
@@ -104,13 +104,13 @@ body {
   line-height: 1;
 }
 
-.logo-img {
-  height: 34px;
-  width: 130px;
+.logo-wordmark {
+  height: 52px;
+  width: 168px;
   object-fit: cover;
-  object-position: center 28%;
+  object-position: center 7%;
   display: block;
-  border-radius: 4px;
+  background: var(--cream);
 }
 
 .logo-text {
@@ -144,14 +144,14 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(17,17,17,0.06);
   border: none;
   border-radius: 20px;
   padding: 4px 10px;
   cursor: pointer;
-  color: var(--white);
+  color: var(--accent);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font);
 }
 
@@ -191,33 +191,65 @@ body {
 
 /* ── Hero greeting ── */
 .hero-greeting {
-  background: var(--brand);
-  color: var(--white);
-  padding: 4px 20px 28px;
+  background: var(--cream);
+  color: var(--accent);
+  padding: 0 20px 22px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+}
+
+.mascot {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 86% 90%;
+  background: var(--cream);
+  border: 3px solid var(--brand);
+  box-shadow: 0 8px 20px rgba(255, 90, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.mascot-stamp {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 86% 90%;
+  border-radius: 50%;
+}
+
+.mascot-scan {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 8px;
 }
 
 .hero-eyebrow {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  margin-bottom: 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0;
 }
 
 .hero-name {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
 }
 
 .hero-store {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 4px;
+  margin-top: 8px;
   font-size: 0.75rem;
-  opacity: 0.75;
-  padding-bottom: 4px;
+  font-weight: 700;
+  color: var(--accent);
+  background: white;
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 
 .hero-store svg { width: 14px; height: 14px; }
@@ -1343,14 +1375,14 @@ body {
 /* ── FRIX stamp card ── */
 .stamp-card {
   margin: 16px;
-  background: var(--accent);
-  color: white;
+  background: var(--surface);
+  color: var(--accent);
   border-radius: var(--radius-lg);
   padding: 18px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
 }
-.stamp-card h2 { font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
-.stamp-card p { font-size: 0.78rem; opacity: 0.75; margin-bottom: 14px; }
+.stamp-card h2 { font-size: 1.05rem; font-weight: 800; margin-bottom: 4px; }
+.stamp-card p { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 14px; }
 .stamp-row {
   display: flex;
   gap: 10px;
@@ -1358,26 +1390,28 @@ body {
 }
 .stamp {
   flex: 1;
+  max-width: 84px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 2px dashed rgba(255,255,255,0.35);
+  border: 2px dashed #e5d8c8;
+  background: #faf7f2;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  overflow: hidden;
+  font-size: 0.72rem;
   font-weight: 800;
-  color: rgba(255,255,255,0.35);
+  color: var(--brand);
 }
 .stamp.filled {
-  background: var(--brand);
   border-style: solid;
   border-color: var(--brand);
-  color: white;
+  background: var(--cream);
 }
 .stamp.reward {
   border-color: var(--brand);
-  color: var(--brand);
-  font-size: 0.7rem;
+  border-style: dashed;
+  background: var(--brand-light);
   text-align: center;
   line-height: 1.1;
   padding: 4px;
@@ -1390,12 +1424,13 @@ body {
   background: var(--surface);
   box-shadow: var(--shadow);
 }
-.offer-banner img {
+.offer-banner img,
+.offer-poster {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  object-fit: contain;
   display: block;
+  background: #f4f4f4;
 }
 .offer-banner-body { padding: 12px 14px; }
 .offer-banner-body strong { display: block; font-size: 0.95rem; font-weight: 800; }
@@ -1409,46 +1444,14 @@ body {
 .price-old { text-decoration: line-through; color: var(--text-light); font-size: 0.85rem; }
 .price-new { color: var(--brand); font-weight: 800; font-size: 1.15rem; }
 
-.app-header {
-  background: var(--accent) !important;
-  color: white !important;
-  border-bottom: none !important;
-}
-.logo-img {
-  height: 40px !important;
-  width: 40px !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 50% !important;
-  border: 2px solid var(--brand);
-}
-.logo-word {
-  font-weight: 900;
-  font-size: 1.15rem;
-  letter-spacing: 0.04em;
-  color: white;
-  line-height: 1;
-}
-.logo-tag {
-  display: block !important;
-  font-size: 0.55rem !important;
-  letter-spacing: 0.14em !important;
-  color: var(--brand) !important;
-  margin-top: 2px !important;
-}
-.lang-toggle {
-  background: rgba(255,255,255,0.12) !important;
-  color: white !important;
-}
-.points-pill {
-  background: var(--brand) !important;
-}
-.hero-greeting {
-  background: var(--accent) !important;
-}
 .scan-fab {
-  background: var(--brand) !important;
-  box-shadow: 0 4px 16px rgba(255, 90, 0, 0.5) !important;
+  background: var(--brand);
+  box-shadow: 0 4px 16px rgba(255, 90, 0, 0.45);
 }
-.scan-fab svg { color: white !important; }
-.balance-strip .coin { color: var(--brand) !important; }
+.scan-fab svg { color: white; }
+.balance-strip .coin { color: var(--brand); }
+.avatar.mascot {
+  width: 64px;
+  height: 64px;
+  font-size: 0;
+}
