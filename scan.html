@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#111111">
+    <title>FRIX — Scan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="scan" data-lang="sq">
+
+<div class="app-shell">
+    <header class="app-header">
+        <div class="header-brand">
+            <img src="img/frix-logo.png" alt="FRIX" class="logo-img">
+            <div>
+                <span class="logo-word">FRIX</span>
+                <span class="logo-tag" data-i18n="logoTag">POTATO GANG</span>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button type="button" class="lang-toggle" id="langToggle" aria-label="Language">
+                <span class="lang-option active" data-lang="sq">SQ</span>
+                <span class="lang-divider">|</span>
+                <span class="lang-option" data-lang="en">EN</span>
+            </button>
+            <div class="points-pill">
+                <span class="coin">●</span>
+                <span id="pointsDisplay">860</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <section class="scan-page">
+            <div class="scan-header">
+                <h1 data-i18n="scanTitle">Skano në arkë</h1>
+                <p data-i18n="scanSubtitle">Trego kartën, porosit — pikat dhe vulat shtohen automatikisht</p>
+            </div>
+
+            <div class="steps">
+                <div class="step active" data-step="1">
+                    <div class="step-num">1</div>
+                    <span data-i18n="step1">Skano kartën</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2">
+                    <div class="step-num">2</div>
+                    <span data-i18n="step2">Porosit</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3">
+                    <div class="step-num">3</div>
+                    <span data-i18n="step3">Merr pikë</span>
+                </div>
+            </div>
+
+            <div class="scanner-viewport" id="scannerViewport">
+                <div class="scanner-frame">
+                    <div class="corner tl"></div>
+                    <div class="corner tr"></div>
+                    <div class="corner bl"></div>
+                    <div class="corner br"></div>
+                    <div class="scan-line" id="scanLine"></div>
+                    <div class="scanner-placeholder" id="scannerPlaceholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V4h3M20 7V4h-3M4 17v3h3M20 17v3h-3"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+                        <p data-i18n="scanPlaceholder">Drejtoni kamerën drejt kodit QR në arkë</p>
+                    </div>
+                    <div class="scanner-success hidden" id="scannerSuccess">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                        <p data-i18n="scanSuccess">Karta u skanua!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scan-actions">
+                <button type="button" class="btn-primary btn-full" id="btnSimulateScan" data-i18n="simulateScan">Simulo skanimin (Demo)</button>
+                <button type="button" class="btn-secondary btn-full hidden" id="btnSimulatePurchase" data-i18n="simulatePurchase">Simulo menu — €4.00</button>
+            </div>
+
+            <div class="purchase-result hidden" id="purchaseResult">
+                <div class="result-icon">●</div>
+                <h3 data-i18n="pointsEarned">Pikë + vulë!</h3>
+                <div class="result-points" id="earnedPoints">+40</div>
+                <p class="result-detail" id="purchaseDetail">€4.00 · Frix Burger Menu · Prishtina Mall</p>
+                <a href="index.html" class="btn-primary btn-full" data-i18n="backHome">Kthehu në kryefaqe</a>
+            </div>
+
+            <div class="how-it-works">
+                <h3 data-i18n="howItWorks">Si funksionon?</h3>
+                <ol>
+                    <li data-i18n="how1">Hap app-in dhe shtyp „Skano"</li>
+                    <li data-i18n="how2">Arkëtari skanon kartën tënde FRIX</li>
+                    <li data-i18n="how3">Çdo blerje = pikë + 1 vulë (3 vulë = pije falas)</li>
+                    <li data-i18n="how4">Shkëmbe pikat për Couples Box, pomfrit Large, sos falas</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+            <span data-i18n="navHome">Kryefaqja</span>
+        </a>
+        <a href="scan.html" class="nav-item nav-scan active">
+            <div class="scan-fab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7V4h3M20 7V4h-3M4 17v3h3M20 17v3h-3"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+            </div>
+            <span data-i18n="navScan">Skano</span>
+        </a>
+        <a href="account.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span data-i18n="navAccount">Llogaria</span>
+        </a>
+    </nav>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

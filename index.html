@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#111111">
+    <title>FRIX — Potato Gang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home" data-lang="sq">
+
+<div class="app-shell">
+    <header class="app-header">
+        <div class="header-brand">
+            <img src="img/frix-logo.png" alt="FRIX" class="logo-img">
+            <div>
+                <span class="logo-word">FRIX</span>
+                <span class="logo-tag" data-i18n="logoTag">POTATO GANG</span>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button type="button" class="lang-toggle" id="langToggle" aria-label="Language">
+                <span class="lang-option active" data-lang="sq">SQ</span>
+                <span class="lang-divider">|</span>
+                <span class="lang-option" data-lang="en">EN</span>
+            </button>
+            <div class="points-pill">
+                <span class="coin">●</span>
+                <span id="pointsDisplay">860</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-main">
+
+        <section class="hero-greeting">
+            <div>
+                <p class="hero-eyebrow" data-i18n="greeting">Yo,</p>
+                <h1 class="hero-name">Altin M.</h1>
+            </div>
+            <div class="hero-store">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-4.5 7-11a7 7 0 10-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <span>Prishtina Mall</span>
+            </div>
+        </section>
+
+        <section class="points-card">
+            <div class="points-card-inner">
+                <div class="points-left">
+                    <span class="label" data-i18n="yourPoints">Pikat e tua</span>
+                    <div class="points-value">
+                        <span class="coin-lg">●</span>
+                        <span id="homePoints">860</span>
+                    </div>
+                    <span class="points-equiv" data-i18n="pointsEquiv">≈ 2 pije falas (3 blerje = 1 pije)</span>
+                </div>
+                <a href="rewards.html" class="btn-redeem" data-i18n="redeemPoints">Shkëmbe pikat</a>
+            </div>
+            <div class="points-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width: 66%"></div></div>
+                <span class="progress-label" data-i18n="nextReward">Edhe 1 blerje deri te pija falas</span>
+            </div>
+        </section>
+
+        <section class="stamp-card">
+            <h2 data-i18n="stampTitle">3 blerje = 1 pije falas</h2>
+            <p data-i18n="stampDesc">Mbush 3 vulat me çdo menu — e 3-ta të jep pije falas</p>
+            <div class="stamp-row">
+                <div class="stamp filled">1</div>
+                <div class="stamp filled">2</div>
+                <div class="stamp reward" data-i18n="stampDrink">PIJE</div>
+            </div>
+        </section>
+
+        <article class="offer-banner">
+            <img src="img/frix-hero.png" alt="Frix Burger Menu">
+            <div class="offer-banner-body">
+                <strong data-i18n="offerTitle">Frix Burger Menu</strong>
+                <span data-i18n="offerDesc">1x Burger · 1x Pomfrit · 1x Sos · 1x Pije</span>
+                <div class="price-tag">
+                    <span class="price-old">€6.00</span>
+                    <span class="price-new">€4.00</span>
+                </div>
+                <span data-i18n="offerValid">Vlen në lokacionet FRIX në Kosovë</span>
+            </div>
+        </article>
+
+        <section class="qr-section">
+            <div class="section-head">
+                <h2 data-i18n="yourCard">Karta jote FRIX</h2>
+                <span class="badge-live" data-i18n="showAtTill">Trego në arkë</span>
+            </div>
+            <div class="qr-card">
+                <div class="qr-card-top">
+                    <span class="member-id">ID: FX-284719</span>
+                    <span class="qr-status pulse" data-i18n="cardActive">Aktive</span>
+                </div>
+                <div class="qr-wrap">
+                    <canvas id="qrCanvas" width="180" height="180" aria-label="FRIX QR"></canvas>
+                </div>
+                <p class="qr-hint" data-i18n="qrHint">Skanoni kartën para pagesës për pikë + vulë në kartelë</p>
+                <div class="qr-timer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    <span data-i18n="qrRefresh">Kodi rifreskohet çdo 120 sek</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="scan-cta-section">
+            <a href="scan.html" class="scan-cta-btn">
+                <div class="scan-cta-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7V4h3M20 7V4h-3M4 17v3h3M20 17v3h-3"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+                </div>
+                <div class="scan-cta-text">
+                    <strong data-i18n="scanNow">Skano në arkë</strong>
+                    <span data-i18n="scanDesc">Hap skanerin për pikë dhe oferta</span>
+                </div>
+                <svg class="scan-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+        </section>
+
+        <section class="promo-section">
+            <div class="section-head">
+                <h2 data-i18n="promotions">Ofertat e nxehta</h2>
+                <a href="#" class="link-more" data-i18n="seeAll">Të gjitha</a>
+            </div>
+            <div class="promo-scroll">
+                <article class="promo-card promo-blue">
+                    <span class="promo-tag" data-i18n="promoHot">Hot</span>
+                    <h3 data-i18n="promo1Title">Frix Burger Menu 4€</h3>
+                    <p data-i18n="promo1Desc">Burger + pomfrit + sos + pije</p>
+                </article>
+                <article class="promo-card promo-yellow">
+                    <span class="promo-tag" data-i18n="promoNew">E re</span>
+                    <h3 data-i18n="promo2Title">Double Potato</h3>
+                    <p data-i18n="promo2Desc">2x pomfrit Large — kursen 1€</p>
+                </article>
+                <article class="promo-card promo-green">
+                    <span class="promo-tag" data-i18n="promoCouple">Çifte</span>
+                    <h3 data-i18n="promo3Title">Couples Box</h3>
+                    <p data-i18n="promo3Desc">2 menu + 2 pije — për ju dy</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="coupons-section">
+            <div class="section-head">
+                <h2 data-i18n="myCoupons">Kuponët e mi</h2>
+                <a href="rewards.html" class="link-more" data-i18n="exchange">Shkëmbe</a>
+            </div>
+            <div class="coupon-list">
+                <div class="coupon-item active">
+                    <div class="coupon-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12v12H6z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+                    </div>
+                    <div class="coupon-body">
+                        <strong class="coupon-title" data-i18n="c1">Pije falas (3 vulë)</strong>
+                        <span class="coupon-meta">3 vulë · 2026-12-31</span>
+                    </div>
+                    <span class="coupon-badge" data-i18n="activated">Aktivizuar</span>
+                </div>
+                <div class="coupon-item">
+                    <div class="coupon-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <div class="coupon-body">
+                        <strong class="coupon-title" data-i18n="c2">Couples Box zbritje</strong>
+                        <span class="coupon-meta">200 <span data-i18n="points">pikë</span></span>
+                    </div>
+                    <button type="button" class="btn-activate" data-i18n="activate">Aktivizo</button>
+                </div>
+                <div class="coupon-item">
+                    <div class="coupon-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/></svg>
+                    </div>
+                    <div class="coupon-body">
+                        <strong class="coupon-title" data-i18n="c3">Pomfrit Large falas</strong>
+                        <span class="coupon-meta">150 <span data-i18n="points">pikë</span></span>
+                    </div>
+                    <button type="button" class="btn-activate" data-i18n="activate">Aktivizo</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="bills-section">
+            <div class="section-head">
+                <h2 data-i18n="recentBills">Porositë e fundit</h2>
+                <a href="#" class="link-more" data-i18n="seeAll">Të gjitha</a>
+            </div>
+            <div class="bill-list">
+                <div class="bill-item">
+                    <div class="bill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M8 6V4h8v2"/></svg>
+                    </div>
+                    <div class="bill-body">
+                        <strong>Prishtina Mall</strong>
+                        <span>2026-11-03 · Frix Burger Menu</span>
+                    </div>
+                    <div class="bill-amount">
+                        <strong>€4.00</strong>
+                        <span class="bill-points">+40 ●</span>
+                    </div>
+                </div>
+                <div class="bill-item">
+                    <div class="bill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M8 6V4h8v2"/></svg>
+                    </div>
+                    <div class="bill-body">
+                        <strong>Albi Mall</strong>
+                        <span>2026-11-01 · Couples Box</span>
+                    </div>
+                    <div class="bill-amount">
+                        <strong>€9.50</strong>
+                        <span class="bill-points">+95 ●</span>
+                    </div>
+                </div>
+                <div class="bill-item">
+                    <div class="bill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M8 6V4h8v2"/></svg>
+                    </div>
+                    <div class="bill-body">
+                        <strong>Prizren</strong>
+                        <span>2026-10-28 · Pomfrit Large</span>
+                    </div>
+                    <div class="bill-amount">
+                        <strong>€2.50</strong>
+                        <span class="bill-points">+25 ●</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="demo-banner">
+            <span data-i18n="demoNote">● Prototip demo — FRIX Potato Gang (SQ / EN)</span>
+        </div>
+
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main">
+        <a href="index.html" class="nav-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+            <span data-i18n="navHome">Kryefaqja</span>
+        </a>
+        <a href="scan.html" class="nav-item nav-scan">
+            <div class="scan-fab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7V4h3M20 7V4h-3M4 17v3h3M20 17v3h-3"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+            </div>
+            <span data-i18n="navScan">Skano</span>
+        </a>
+        <a href="account.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span data-i18n="navAccount">Llogaria</span>
+        </a>
+    </nav>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

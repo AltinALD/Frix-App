@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#111111">
+    <title>FRIX — Rewards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="rewards" data-lang="sq">
+
+<div class="app-shell">
+    <header class="app-header">
+        <div class="header-brand">
+            <img src="img/frix-logo.png" alt="FRIX" class="logo-img">
+            <div>
+                <span class="logo-word">FRIX</span>
+                <span class="logo-tag" data-i18n="logoTag">POTATO GANG</span>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button type="button" class="lang-toggle" id="langToggle" aria-label="Language">
+                <span class="lang-option active" data-lang="sq">SQ</span>
+                <span class="lang-divider">|</span>
+                <span class="lang-option" data-lang="en">EN</span>
+            </button>
+            <div class="points-pill">
+                <span class="coin">●</span>
+                <span id="pointsDisplay">860</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <section class="rewards-page">
+            <div class="rewards-header">
+                <a href="index.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </a>
+                <div>
+                    <h1 data-i18n="rewardsTitle">Shkëmbe pikat</h1>
+                    <p data-i18n="rewardsSubtitle">Pomfrit, couples box, pije — me pikët e tua</p>
+                </div>
+            </div>
+
+            <div class="balance-strip">
+                <span data-i18n="availableBalance">Pikat e disponueshme</span>
+                <strong><span class="coin">●</span> 860</strong>
+            </div>
+
+            <div class="rewards-grid">
+                <div class="reward-card">
+                    <span class="reward-icon">🥤</span>
+                    <h3 data-i18n="r1">Pije falas</h3>
+                    <span class="reward-cost"><span class="coin">●</span> 100</span>
+                    <button type="button" class="btn-reward-exchange" data-i18n="exchangeBtn">Shkëmbe</button>
+                </div>
+                <div class="reward-card">
+                    <span class="reward-icon">🍟</span>
+                    <h3 data-i18n="r2">Pomfrit Large falas</h3>
+                    <span class="reward-cost"><span class="coin">●</span> 150</span>
+                    <button type="button" class="btn-reward-exchange" data-i18n="exchangeBtn">Shkëmbe</button>
+                </div>
+                <div class="reward-card">
+                    <span class="reward-icon">🥫</span>
+                    <h3 data-i18n="r3">Sos Frix falas</h3>
+                    <span class="reward-cost"><span class="coin">●</span> 50</span>
+                    <button type="button" class="btn-reward-exchange" data-i18n="exchangeBtn">Shkëmbe</button>
+                </div>
+                <div class="reward-card">
+                    <span class="reward-icon">💑</span>
+                    <h3 data-i18n="r4">Couples Box (-€2)</h3>
+                    <span class="reward-cost"><span class="coin">●</span> 200</span>
+                    <button type="button" class="btn-reward-exchange" data-i18n="exchangeBtn">Shkëmbe</button>
+                </div>
+                <div class="reward-card">
+                    <span class="reward-icon">🍔</span>
+                    <h3 data-i18n="r5">Frix Burger Menu</h3>
+                    <span class="reward-cost"><span class="coin">●</span> 350</span>
+                    <button type="button" class="btn-reward-exchange" data-i18n="exchangeBtn">Shkëmbe</button>
+                </div>
+                <div class="reward-card">
+                    <span class="reward-icon">🔥</span>
+                    <h3 data-i18n="r6">2x Menu Couples</h3>
+                    <span class="reward-cost"><span class="coin">●</span> 500</span>
+                    <button type="button" class="btn-reward-exchange" data-i18n="exchangeBtn">Shkëmbe</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
